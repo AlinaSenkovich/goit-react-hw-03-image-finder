@@ -13,5 +13,7 @@ export default function LoadMore({ onLoadMore }) {
 }
 
 LoadMore.propTypes = {
-  onLoadMore: PropTypes.func,
+  onLoadMore: PropTypes.func.isRequired,
 };
+
+

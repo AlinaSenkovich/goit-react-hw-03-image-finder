@@ -11,6 +11,8 @@ function loader() {
           strokeWidth="5"
           animationDuration="0.75"
           width="96"
+          display="block"
+          margin="0 auto"
           visible={true}
         />
       </div>

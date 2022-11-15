@@ -19,7 +19,7 @@ function ImageGallery({ gallery, onOpenPicture }) {
 
 ImageGallery.propTypes = {
   gallery: PropTypes.arrayOf(PropTypes.object),
-  onOpenPicture: PropTypes.func,
+  onOpenPicture: PropTypes.func.isRequired,
 };
 
 export default ImageGallery;

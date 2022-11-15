@@ -6,7 +6,10 @@ import Modal from './Modal/Modal';
 import ImageGallery from './ImageGallery/ImageGallery';
 import LoadMore from './Button/Button';
 
+//import * as fetchDataApi from './fetchDataApi';
+
 import fetchDataApi from './fetchDataApi';
+
 
 export class App extends Component {
   state = {
@@ -75,14 +78,14 @@ export class App extends Component {
     this.toggleModal();
   };
 
-  showLoader = () => {
+  showLoadMore = () => {
     const { total, page } = this.state;
     return Math.ceil(total / 12) !== page - 1;
   };
 
   render() {
     const { error, showLoader, showModal, gallery, largeImage } = this.state;
-    const showLoadMore = this.showLoadMore;
+    const showLoadMore = this.showLoadMore();
     return (
       <div className={s.container}>
         <Searchbar onSubmit={this.handleFormSubmit} />
@@ -99,7 +102,7 @@ export class App extends Component {
         {showLoader && <PreLoader />}
 
         {gallery.length > 0 && !showLoader && showLoadMore && (
-          <LoadMore onLoader={this.fetchGallary} />
+          <LoadMore onLoadMore={this.fetchGallary} />
         )}
 
         {showModal && (
